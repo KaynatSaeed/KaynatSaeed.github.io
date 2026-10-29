@@ -1,0 +1,840 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kaynat Saeed – Full-Stack Developer in Dubai</title>
+<meta name="description" content="Kaynat Saeed is a full-stack developer in Dubai building business portals, ERP and AML/KYC compliance systems, money exchange software and lead-generation platforms for real estate and mortgage. Next.js, React, Angular, Vue.js, .NET, SQL Server, Azure.">
+<meta name="author" content="Kaynat Saeed">
+<meta name="theme-color" content="#0F1B3D">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kaynat Saeed – Full-Stack Developer in Dubai">
+<meta property="og:description" content="Business portals, ERP, AML/KYC compliance, money exchange software and real estate lead-generation platforms. See live work, experience and skills.">
+<link rel="canonical" href="https://kaynatsaeed.github.io/">
+<meta property="og:url" content="https://kaynatsaeed.github.io/">
+<meta property="og:image" content="https://kaynatsaeed.github.io/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Kaynat Saeed",
+  "jobTitle": "Full-Stack Developer",
+  "url": "https://kaynatsaeed.github.io/",
+  "image": "https://kaynatsaeed.github.io/og-image.jpg",
+  "email": "mailto:kaynatvu@gmail.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "Dubai", "addressCountry": "AE" },
+  "sameAs": ["https://www.linkedin.com/in/kaynat-saeed", "https://dribbble.com/kaynat-saeed"],
+  "knowsAbout": ["Next.js", "React", "Angular", "Vue.js", "TypeScript", "C#", "ASP.NET Core", "SQL Server", "Microsoft Azure", "Docker", "CI/CD", "AML", "KYC", "ERP", "Fintech"]
+}
+</script>
+<style>
+:root {
+  --night: #0F1B3D;
+  --night-2: #182A5C;
+  --night-line: rgba(174, 184, 255, 0.16);
+  --paper: #F5F6FA;
+  --white: #FFFFFF;
+  --ink: #16203A;
+  --slate: #535D73;
+  --line: #DCE0EA;
+  --brass: #E2B04F;
+  --brass-ink: #8A5A0B;
+  --lilac: #AEB8FF;
+  --mist: #C4CCE4;
+  --radius-frame: 12px;
+  --radius-control: 999px;
+  --wrap: 1200px;
+  --gutter: clamp(16px, 4vw, 40px);
+  --font: "Bricolage Grotesque", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  font-variation-settings: "opsz" 14;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+h1, h2, h3 { margin: 0; line-height: 1.1; font-weight: 700; }
+p { margin: 0; }
+ul, ol { margin: 0; padding: 0; }
+:focus-visible { outline: 3px solid var(--brass); outline-offset: 3px; border-radius: 4px; }
+
+.skip { position: absolute; left: 16px; top: -60px; z-index: 100; background: var(--brass); color: var(--night); padding: 10px 16px; border-radius: 8px; font-weight: 600; text-decoration: none; }
+.skip:focus { top: 12px; }
+
+.wrap { width: 100%; max-width: var(--wrap); margin-inline: auto; padding-inline: var(--gutter); }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 48px; padding: 12px 24px;
+  border-radius: var(--radius-control);
+  font: inherit; font-weight: 600; font-size: 1rem; line-height: 1.2;
+  text-decoration: none; cursor: pointer;
+  border: 1.5px solid transparent;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+.btn-solid { background: var(--brass); color: var(--night); }
+.btn-solid:hover { background: #F0C36A; }
+.btn-line { border-color: rgba(174, 184, 255, .45); color: var(--white); }
+.btn-line:hover { border-color: var(--lilac); background: rgba(174, 184, 255, .08); }
+.btn svg { width: 18px; height: 18px; flex: none; }
+
+/* Header */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(15, 27, 61, .92);
+  -webkit-backdrop-filter: saturate(140%) blur(10px);
+  backdrop-filter: saturate(140%) blur(10px);
+  border-bottom: 1px solid var(--night-line);
+  color: var(--white);
+}
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 68px; }
+.brand { font-weight: 700; font-size: 1.125rem; text-decoration: none; letter-spacing: -0.01em; }
+.nav { display: flex; align-items: center; gap: 28px; }
+.nav-links { display: flex; gap: 24px; list-style: none; }
+.nav-links a { color: var(--mist); text-decoration: none; font-size: .9375rem; }
+.nav-links a:hover { color: var(--white); }
+.nav .btn { min-height: 40px; padding: 8px 18px; font-size: .9375rem; }
+
+/* Hero */
+.hero {
+  position: relative; overflow: hidden;
+  background:
+    radial-gradient(60% 80% at 85% 10%, rgba(96, 90, 220, .45), transparent 70%),
+    radial-gradient(50% 60% at 20% 110%, rgba(40, 110, 200, .30), transparent 70%),
+    linear-gradient(100deg, #0B1533 0%, #13224F 100%);
+  color: var(--white);
+}
+.hero::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+.hero .wrap {
+  position: relative;
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: clamp(32px, 5vw, 72px); align-items: center;
+  padding-block: clamp(56px, 8vw, 112px) clamp(56px, 7vw, 96px);
+}
+.hero-role { color: var(--brass); font-weight: 600; font-size: 1.125rem; margin-bottom: 14px; }
+.hero h1 {
+  font-size: clamp(3.25rem, 7.4vw, 6.5rem);
+  font-variation-settings: "opsz" 96, "wdth" 78;
+  font-weight: 760;
+  letter-spacing: -0.025em;
+  line-height: .92;
+  margin-bottom: 28px;
+}
+.hero-lede { font-size: clamp(1.1875rem, 1.7vw, 1.4375rem); line-height: 1.45; color: #E4E8F7; max-width: 34ch; margin-bottom: 18px; font-variation-settings: "opsz" 24; }
+.hero-stack { color: var(--mist); max-width: 46ch; margin-bottom: 32px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
+.hero-note { color: var(--mist); font-size: .9375rem; display: flex; align-items: flex-start; gap: 12px; max-width: 46ch; }
+.hero-note::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #4ADE80; box-shadow: 0 0 0 4px rgba(74, 222, 128, .18); flex: none; margin-top: .55em; }
+
+/* Device frames */
+.frame { display: block; background: #1E2130; border-radius: var(--radius-frame); overflow: hidden; box-shadow: 0 24px 60px -20px rgba(3, 8, 25, .65), 0 0 0 1px rgba(255,255,255,.06); }
+.frame-bar { display: flex; align-items: center; gap: 6px; height: 30px; padding-inline: 12px; }
+.frame-bar i { width: 9px; height: 9px; border-radius: 50%; background: #FF5F57; flex: none; }
+.frame-bar i:nth-child(2) { background: #FEBC2E; }
+.frame-bar i:nth-child(3) { background: #28C840; }
+.frame-url { margin-inline: auto; max-width: 70%; padding: 2px 14px; border-radius: 6px; background: #2C3042; color: #A9AEC2; font-size: .6875rem; line-height: 1.6; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-variation-settings: "opsz" 12; }
+.frame img { width: 100%; aspect-ratio: 2.08 / 1; object-fit: cover; object-position: top; }
+.phone { background: #0A0D18; border-radius: 26px; padding: 6px; box-shadow: 0 24px 50px -16px rgba(3, 8, 25, .7), 0 0 0 1px rgba(255,255,255,.08); }
+.phone img { border-radius: 20px; width: 100%; aspect-ratio: 9 / 18.5; object-fit: cover; object-position: top; }
+
+.stage { position: relative; aspect-ratio: 1.22 / 1; }
+.stage .frame, .stage .phone { position: absolute; }
+.stage-back { top: 0; right: 0; width: 80%; opacity: .92; }
+.stage-front { left: 0; bottom: 9%; width: 82%; }
+.stage-phone { right: 3%; bottom: 0; width: 21%; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .stage-back { animation: settle .9s .1s cubic-bezier(.2, .7, .2, 1) both; }
+  .stage-front { animation: settle .9s .25s cubic-bezier(.2, .7, .2, 1) both; }
+  .stage-phone { animation: settle .9s .4s cubic-bezier(.2, .7, .2, 1) both; }
+  @keyframes settle { from { opacity: 0; transform: translateY(28px); } }
+}
+
+/* Sections */
+.section { padding-block: clamp(64px, 9vw, 120px); }
+.section-head { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 24px 48px; align-items: end; margin-bottom: clamp(36px, 5vw, 64px); }
+.section-head h2 { font-size: clamp(2.125rem, 4.2vw, 3.5rem); font-variation-settings: "opsz" 72, "wdth" 85; letter-spacing: -0.02em; }
+.section-head p { color: var(--slate); max-width: 58ch; }
+
+/* What I build */
+.domains { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 2px solid var(--ink); list-style: none; }
+.domains li { padding: 24px 24px 8px 0; }
+.domains li + li { padding-left: 24px; border-left: 1px solid var(--line); }
+.domains h3 { font-size: 1.3125rem; margin-bottom: 12px; font-variation-settings: "opsz" 28; letter-spacing: -0.01em; }
+.domains p { color: var(--slate); font-size: 1rem; }
+.domains .where { margin-top: 14px; font-size: .875rem; color: var(--brass-ink); font-weight: 600; }
+
+/* Work */
+.work { background: var(--white); border-block: 1px solid var(--line); }
+.case { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(28px, 5vw, 72px); padding-block: clamp(40px, 6vw, 72px); border-top: 1px solid var(--line); }
+.case:first-of-type { border-top: 0; padding-top: 0; }
+.case-text { align-self: start; position: sticky; top: 100px; }
+.case-client { color: var(--brass-ink); font-weight: 600; font-size: .9375rem; margin-bottom: 10px; }
+.case h3 { font-size: clamp(1.75rem, 2.8vw, 2.375rem); font-variation-settings: "opsz" 48, "wdth" 88; letter-spacing: -0.015em; margin-bottom: 16px; }
+.case-summary { color: var(--slate); margin-bottom: 20px; }
+.points { list-style: none; display: grid; gap: 12px; margin-bottom: 22px; }
+.points li { position: relative; padding-left: 22px; font-size: 1rem; }
+.points li::before { content: ""; position: absolute; left: 0; top: .62em; width: 10px; height: 2px; background: var(--brass); }
+.stack { font-size: .9375rem; color: var(--slate); margin-bottom: 22px; }
+.stack b { color: var(--ink); font-weight: 600; }
+.live-link { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; color: var(--ink); text-decoration: none; border-bottom: 2px solid var(--brass); padding-bottom: 2px; overflow-wrap: anywhere; }
+.live-link:hover { color: var(--brass-ink); }
+.live-link svg { width: 16px; height: 16px; flex: none; }
+.case-note { font-size: .9375rem; color: var(--slate); font-style: italic; }
+
+.case-media { display: grid; gap: 16px; min-width: 0; }
+.showcase { position: relative; padding: clamp(16px, 3vw, 36px); border-radius: 18px; background: linear-gradient(135deg, #13224F, #2A3B86); }
+.showcase .phone { position: absolute; right: clamp(10px, 2.5vw, 28px); bottom: clamp(-28px, -2vw, -12px); width: 19%; }
+.showcase.has-phone { margin-bottom: 28px; }
+.details { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; }
+.details .shot img { border-radius: 10px; border: 1px solid var(--line); aspect-ratio: 2.08 / 1; object-fit: cover; object-position: top; width: 100%; }
+
+.zoom { display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: zoom-in; border-radius: 10px; text-align: left; color: inherit; font: inherit; }
+.shot { margin: 0; }
+.shot figcaption { font-size: .875rem; color: var(--slate); margin-top: 8px; }
+
+/* Internal systems */
+.hidden-work { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(28px, 5vw, 72px); padding-top: clamp(40px, 6vw, 72px); border-top: 1px solid var(--line); }
+.hidden-work h3 { font-size: clamp(1.5rem, 2.4vw, 2rem); font-variation-settings: "opsz" 40, "wdth" 88; margin-bottom: 14px; letter-spacing: -0.01em; }
+.hidden-work > div > p { color: var(--slate); }
+.sys { list-style: none; border-top: 1px solid var(--line); }
+.sys li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+.sys span { color: var(--slate); font-size: .9375rem; text-align: right; }
+
+/* Design */
+.designs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 32px); list-style: none; }
+.designs img { border-radius: 14px; aspect-ratio: 4 / 3; object-fit: cover; width: 100%; }
+.designs h3 { font-size: 1.3125rem; margin: 18px 0 8px; font-variation-settings: "opsz" 28; }
+.designs p { color: var(--slate); font-size: 1rem; }
+.more { margin-top: 36px; }
+.more a { font-weight: 600; text-decoration: none; border-bottom: 2px solid var(--brass); padding-bottom: 2px; }
+
+/* Experience */
+.experience { background: var(--white); border-block: 1px solid var(--line); }
+.timeline { list-style: none; }
+.role { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); gap: 16px 48px; padding-block: 32px; border-top: 1px solid var(--line); }
+.role:last-child { border-bottom: 1px solid var(--line); }
+.role-dates { color: var(--slate); font-size: .9375rem; font-variant-numeric: tabular-nums; padding-top: 4px; }
+.role h3 { font-size: 1.375rem; font-variation-settings: "opsz" 28; letter-spacing: -0.01em; margin-bottom: 4px; }
+.role-org { color: var(--brass-ink); font-weight: 600; font-size: .9375rem; margin-bottom: 14px; }
+.role .points { margin-bottom: 0; max-width: 72ch; }
+
+/* Skills */
+.skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px 40px; }
+.skills h3 { font-size: 1.125rem; margin-bottom: 14px; font-variation-settings: "opsz" 24; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; }
+.tags li { padding: 5px 12px; border: 1px solid var(--line); background: var(--white); border-radius: var(--radius-control); font-size: .9063rem; line-height: 1.4; }
+
+.creds { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 40px; margin-top: clamp(48px, 6vw, 72px); padding-top: 32px; border-top: 2px solid var(--ink); }
+.creds h3 { font-size: 1.125rem; margin-bottom: 6px; font-variation-settings: "opsz" 24; }
+.creds p { color: var(--slate); font-size: 1rem; }
+
+/* Contact */
+.contact { background: linear-gradient(100deg, #0B1533 0%, #13224F 100%); color: var(--white); }
+.contact .wrap { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 40px 72px; align-items: start; }
+.contact h2 { font-size: clamp(2.25rem, 4.6vw, 3.75rem); font-variation-settings: "opsz" 80, "wdth" 82; letter-spacing: -0.02em; margin-bottom: 20px; }
+.contact-lede { color: #DCE2F5; max-width: 46ch; margin-bottom: 32px; font-size: 1.125rem; }
+.reach { list-style: none; border-top: 1px solid var(--night-line); }
+.reach li { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--night-line); align-items: baseline; }
+.reach span { color: var(--mist); font-size: .9375rem; }
+.reach a { color: var(--white); text-decoration: none; font-weight: 600; overflow-wrap: anywhere; }
+.reach a:hover { color: var(--brass); }
+.facts { list-style: none; display: grid; gap: 8px; color: var(--mist); font-size: .9375rem; margin-top: 28px; }
+
+.site-footer { background: #0A1330; color: #8F98B8; font-size: .875rem; }
+.site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; padding-block: 24px; }
+
+/* Lightbox */
+.lightbox { border: 0; padding: 0; background: transparent; max-width: min(1400px, 94vw); width: 100%; color: var(--white); }
+.lightbox::backdrop { background: rgba(6, 10, 24, .88); }
+.lightbox img { width: 100%; max-height: 82vh; object-fit: contain; border-radius: 10px; background: #0A0D18; }
+.lightbox-bar { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 12px; }
+.lightbox-bar p { color: var(--mist); font-size: .9375rem; }
+.lightbox-close { min-height: 40px; padding: 8px 18px; font-size: .9375rem; }
+
+/* Responsive */
+@media (max-width: 1023px) {
+  .hero .wrap { grid-template-columns: 1fr; }
+  .stage { max-width: 640px; }
+  .domains { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .domains li:nth-child(3) { padding-left: 0; border-left: 0; }
+  .domains li:nth-child(n+3) { border-top: 1px solid var(--line); margin-top: 16px; }
+  .case, .hidden-work { grid-template-columns: 1fr; }
+  .case-text { position: static; }
+  .designs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .skills { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .contact .wrap { grid-template-columns: 1fr; }
+}
+@media (max-width: 767px) {
+  body { font-size: 1rem; }
+  .nav-links { display: none; }
+  .section-head { grid-template-columns: 1fr; }
+  .domains { grid-template-columns: 1fr; }
+  .domains li, .domains li + li { padding: 20px 0 4px; border-left: 0; }
+  .domains li + li { border-top: 1px solid var(--line); margin-top: 16px; }
+  .designs, .skills, .creds { grid-template-columns: 1fr; }
+  .role { grid-template-columns: 1fr; gap: 6px; }
+  .sys li { grid-template-columns: 1fr; gap: 2px; }
+  .sys span { text-align: left; }
+  .reach li { grid-template-columns: 1fr; gap: 2px; }
+  .hero-actions .btn { flex: 1 1 auto; }
+  .frame-bar { height: 24px; }
+  .frame-url { display: none; }
+}
+@media (max-width: 479px) {
+  .stage-phone { width: 24%; }
+}
+@media print {
+  .site-header, .lightbox, .hero::before { display: none; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top">Kaynat Saeed</a>
+    <nav class="nav" aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#design">Design</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a class="btn btn-solid" href="Kaynat-Saeed-Full-Stack-Developer-CV.pdf" download>Download CV</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div>
+        <p class="hero-role">Full-stack developer in Dubai</p>
+        <h1 id="hero-title">Kaynat Saeed</h1>
+        <p class="hero-lede">I build business portals, ERP and AML/KYC compliance systems, money exchange software, and lead-generation platforms for real estate and mortgage.</p>
+        <p class="hero-stack">Nearly 5 years with Next.js, React, Angular and Vue.js on the front end, C#, ASP.NET Core and SQL Server on the back end, and Docker, CI/CD and Azure in production.</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="#work">See live work</a>
+          <a class="btn btn-line" href="Kaynat-Saeed-Full-Stack-Developer-CV.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>
+            Download CV
+          </a>
+        </div>
+        <p class="hero-note">Open to full-stack roles in the UAE. UAE employment visa, 1 month notice.</p>
+      </div>
+
+      <div class="stage" aria-hidden="true">
+        <div class="frame stage-back">
+          <div class="frame-bar"><i></i><i></i><i></i><span class="frame-url">influencers.filmfaremiddleeast.com</span></div>
+          <img src="filmfare-800.webp" srcset="filmfare-800.webp 800w, filmfare-1600.webp 1600w" sizes="(max-width: 1023px) 80vw, 480px" width="800" height="385" alt="" fetchpriority="high">
+        </div>
+        <div class="frame stage-front">
+          <div class="frame-bar"><i></i><i></i><i></i><span class="frame-url">yas-residences.abu-dhabi-real-estate.ae</span></div>
+          <img src="yas-800.webp" srcset="yas-800.webp 800w, yas-1600.webp 1600w" sizes="(max-width: 1023px) 82vw, 500px" width="800" height="385" alt="" fetchpriority="high">
+        </div>
+        <div class="phone stage-phone">
+          <img src="m-promotions-420.webp" width="420" height="910" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="build" aria-labelledby="build-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="build-title">What I build</h2>
+        <p>Software for regulated finance, enterprise operations and Dubai real estate, taken from Figma design to a production deployment on Azure.</p>
+      </div>
+      <ul class="domains">
+        <li>
+          <h3>Fintech and compliance</h3>
+          <p>AML transaction monitoring, KYC onboarding with enhanced due diligence, and money exchange applications.</p>
+          <p class="where">Circuit Computer, Dubai</p>
+        </li>
+        <li>
+          <h3>ERP and business portals</h3>
+          <p>Accounts, HR and e-document modules, role-based portals, CRM workflows and dashboards.</p>
+          <p class="where">Swati Technologies and New Heights</p>
+        </li>
+        <li>
+          <h3>Real estate and mortgage</h3>
+          <p>A property portal for buying, selling and renting, launch sites, campaign landing pages and mortgage calculators.</p>
+          <p class="where">New Heights, Dubai</p>
+        </li>
+        <li>
+          <h3>APIs, data and cloud</h3>
+          <p>Clean Architecture .NET APIs with unit tests, SQL Server data models, lead-source analytics, and Docker apps with CI/CD on Azure.</p>
+          <p class="where">Across all roles</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section work" id="work" aria-labelledby="work-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="work-title">Live work</h2>
+        <p>Public websites and platforms I designed and developed for New Heights Real Estate and its partners. Most are live, so you can open them and try them yourself. Select any screenshot to see it larger.</p>
+      </div>
+
+      <article class="case" aria-labelledby="c1">
+        <div class="case-text">
+          <p class="case-client">Filmfare Middle East, Dubai</p>
+          <h3 id="c1">Event platform for Celebrities, Influencers &amp; Business Night 2026</h3>
+          <p class="case-summary">A full-stack platform that replaced spreadsheets for the event team, from public registration to staff review.</p>
+          <ul class="points">
+            <li>Next.js registration site where one question sends influencers, celebrities and sponsors into their own short multi-step journey.</li>
+            <li>Clean Architecture ASP.NET Core Web API with unit tests and a SQL Server data model.</li>
+            <li>Staff portal with role-based access, a status workflow, automated emails and analytics dashboards.</li>
+          </ul>
+          <p class="stack"><b>Built with</b> Next.js, TypeScript, C#, ASP.NET Core, SQL Server, Docker, Azure</p>
+          <a class="live-link" href="https://influencers.filmfaremiddleeast.com" target="_blank" rel="noopener">
+            Visit influencers.filmfaremiddleeast.com
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+          </a>
+        </div>
+        <div class="case-media">
+          <div class="showcase has-phone">
+            <button class="zoom" type="button" data-full="filmfare-1600.webp" data-caption="Filmfare Middle East event website, home page">
+              <span class="frame">
+                <span class="frame-bar"><i></i><i></i><i></i><span class="frame-url">influencers.filmfaremiddleeast.com</span></span>
+                <img src="filmfare-800.webp" srcset="filmfare-800.webp 800w, filmfare-1600.webp 1600w" sizes="(max-width: 1023px) 92vw, 640px" width="800" height="385" loading="lazy" alt="Filmfare Middle East event website home page with film-strip of past magazine covers">
+              </span>
+            </button>
+            <div class="phone"><img src="m-filmfare-420.webp" width="420" height="910" loading="lazy" alt="Filmfare event website on a phone"></div>
+          </div>
+          <div class="details">
+            <figure class="shot">
+              <button class="zoom" type="button" data-full="filmfare-registration-1600.webp" data-caption="Registration flow: one question routes each visitor to the right journey">
+                <img src="filmfare-registration-800.webp" width="800" height="385" loading="lazy" alt="Registration form asking how the visitor is registering: influencer, celebrity, or partner">
+              </button>
+              <figcaption>Registration that adapts to who is signing up</figcaption>
+            </figure>
+            <figure class="shot">
+              <button class="zoom" type="button" data-full="filmfare-tiers-1600.webp" data-caption="Partnership tiers for sponsors">
+                <img src="filmfare-tiers-800.webp" width="800" height="385" loading="lazy" alt="Sponsorship tier cards from Diamond to Bronze">
+              </button>
+              <figcaption>Partnership tiers for sponsors</figcaption>
+            </figure>
+          </div>
+        </div>
+      </article>
+
+      <article class="case" aria-labelledby="c2">
+        <div class="case-text">
+          <p class="case-client">New Heights Real Estate, Dubai</p>
+          <h3 id="c2">Campaign landing pages with smart lead tracking</h3>
+          <p class="case-summary">A central promotions platform for Google Ads traffic, plus launch pages for projects by Emaar, Modon and Azizi.</p>
+          <ul class="points">
+            <li>A two-step property questionnaire replaces the long contact form, with Call and WhatsApp fixed within thumb reach on mobile.</li>
+            <li>Launch pages, each with its own look, built on one shared Tailwind CSS design system and template.</li>
+            <li>Every lead is stamped with its campaign, source and time, routed to the LeadRat CRM API and counted in funnel analytics.</li>
+          </ul>
+          <p class="stack"><b>Built with</b> Next.js, TypeScript, Tailwind CSS, LeadRat CRM API, Google Ads, Azure Container Apps</p>
+          <a class="live-link" href="https://promotions.newheightsrealestate.ae" target="_blank" rel="noopener">
+            Visit promotions.newheightsrealestate.ae
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+          </a>
+        </div>
+        <div class="case-media">
+          <div class="showcase has-phone">
+            <button class="zoom" type="button" data-full="promotions-1600.webp" data-caption="Promotions platform for paid-ad traffic">
+              <span class="frame">
+                <span class="frame-bar"><i></i><i></i><i></i><span class="frame-url">promotions.newheightsrealestate.ae</span></span>
+                <img src="promotions-800.webp" srcset="promotions-800.webp 800w, promotions-1600.webp 1600w" sizes="(max-width: 1023px) 92vw, 640px" width="800" height="385" loading="lazy" alt="Promotions landing page with a 'Let's find your property' questionnaire beside the Dubai skyline">
+              </span>
+            </button>
+            <div class="phone"><img src="m-promotions-420.webp" width="420" height="910" loading="lazy" alt="Promotions platform on a phone with a fixed call and WhatsApp bar"></div>
+          </div>
+          <div class="details">
+            <figure class="shot">
+              <button class="zoom" type="button" data-full="alva-1600.webp" data-caption="Alva at The Valley by Emaar, townhouse launch page">
+                <img src="alva-800.webp" width="800" height="385" loading="lazy" alt="Alva at The Valley launch page with a night-time hero">
+              </button>
+              <figcaption>Alva at The Valley by Emaar</figcaption>
+            </figure>
+            <figure class="shot">
+              <button class="zoom" type="button" data-full="wadeem-1600.webp" data-caption="Wadeem Gardens by Modon, villa launch page">
+                <img src="wadeem-800.webp" width="800" height="385" loading="lazy" alt="Wadeem Gardens launch page with an enquiry form beside the hero">
+              </button>
+              <figcaption>Wadeem Gardens by Modon</figcaption>
+            </figure>
+            <figure class="shot">
+              <button class="zoom" type="button" data-full="azizi-1600.webp" data-caption="Azizi Florence, expression-of-interest launch page">
+                <img src="azizi-800.webp" width="800" height="385" loading="lazy" alt="Azizi Florence launch page with a two-step expression-of-interest form">
+              </button>
+              <figcaption>Azizi Florence</figcaption>
+            </figure>
+          </div>
+        </div>
+      </article>
+
+      <article class="case" aria-labelledby="c3">
+        <div class="case-text">
+          <p class="case-client">Ohana Development project, Abu Dhabi</p>
+          <h3 id="c3">Yas Residences launch platform</h3>
+          <p class="case-summary">A full launch website with its own back-end portal, so the sales team can manage enquiries and content.</p>
+          <ul class="points">
+            <li>Next.js residence explorer for each home type, with floor areas, galleries and floor plans.</li>
+            <li>Payment-plan views that lay out every instalment for each plan.</li>
+            <li>ASP.NET back-end portal with SQL Server, and bilingual English and Arabic content.</li>
+          </ul>
+          <p class="stack"><b>Built with</b> Next.js, TypeScript, ASP.NET, SQL Server, Azure</p>
+          <a class="live-link" href="https://yas-residences.abu-dhabi-real-estate.ae" target="_blank" rel="noopener">
+            Visit yas-residences.abu-dhabi-real-estate.ae
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+          </a>
+        </div>
+        <div class="case-media">
+          <div class="showcase has-phone">
+            <button class="zoom" type="button" data-full="yas-1600.webp" data-caption="Yas Residences residence explorer">
+              <span class="frame">
+                <span class="frame-bar"><i></i><i></i><i></i><span class="frame-url">yas-residences.abu-dhabi-real-estate.ae</span></span>
+                <img src="yas-800.webp" srcset="yas-800.webp 800w, yas-1600.webp 1600w" sizes="(max-width: 1023px) 92vw, 640px" width="800" height="385" loading="lazy" alt="Yas Residences page showing five home types and a two-bedroom townhouse with its details">
+              </span>
+            </button>
+            <div class="phone"><img src="m-yas-420.webp" width="420" height="910" loading="lazy" alt="Yas Residences website on a phone"></div>
+          </div>
+          <div class="details">
+            <figure class="shot">
+              <button class="zoom" type="button" data-full="yas-payment-1600.webp" data-caption="Payment plans with every instalment laid out">
+                <img src="yas-payment-800.webp" width="800" height="385" loading="lazy" alt="Payment plan table listing each instalment and its due date">
+              </button>
+              <figcaption>Payment plans, instalment by instalment</figcaption>
+            </figure>
+          </div>
+        </div>
+      </article>
+
+      <article class="case" aria-labelledby="c4">
+        <div class="case-text">
+          <p class="case-client">New Heights Financial Broker, Dubai</p>
+          <h3 id="c4">Mortgage broker website and calculators</h3>
+          <p class="case-summary">A public website whose enquiries flow into the mortgage portal I built for the broker team, a role-based mini-CRM.</p>
+          <ul class="points">
+            <li>Pre-eligibility, callback and enquiry journeys connected to the team's portal.</li>
+            <li>Five mortgage calculators: EMI, affordability, eligibility, refinance, and rent vs buy.</li>
+            <li>Loan insights that show how extra payments and inflation change the real cost of a loan.</li>
+          </ul>
+          <p class="stack"><b>Built with</b> Next.js, TypeScript, C#, ASP.NET Core, SQL Server, Azure</p>
+          <a class="live-link" href="https://www.newheightsfinancialbroker.com" target="_blank" rel="noopener">
+            Visit newheightsfinancialbroker.com
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+          </a>
+        </div>
+        <div class="case-media">
+          <div class="showcase">
+            <button class="zoom" type="button" data-full="nhfb-1600.webp" data-caption="New Heights Financial Broker home page">
+              <span class="frame">
+                <span class="frame-bar"><i></i><i></i><i></i><span class="frame-url">newheightsfinancialbroker.com</span></span>
+                <img src="nhfb-800.webp" srcset="nhfb-800.webp 800w, nhfb-1600.webp 1600w" sizes="(max-width: 1023px) 92vw, 640px" width="800" height="385" loading="lazy" alt="Mortgage broker home page with a family photo and a 'Get pre-approved' button">
+              </span>
+            </button>
+          </div>
+          <div class="details">
+            <figure class="shot">
+              <button class="zoom" type="button" data-full="nhfb-calculator-1600.webp" data-caption="Mortgage calculator with a live EMI estimate">
+                <img src="nhfb-calculator-800.webp" width="800" height="385" loading="lazy" alt="Mortgage calculator with sliders and a monthly payment summary">
+              </button>
+              <figcaption>Live EMI calculator</figcaption>
+            </figure>
+            <figure class="shot">
+              <button class="zoom" type="button" data-full="nhfb-insights-1600.webp" data-caption="Loan insights: prepayment and inflation">
+                <img src="nhfb-insights-800.webp" width="800" height="385" loading="lazy" alt="Charts showing savings from extra payments and the effect of inflation">
+              </button>
+              <figcaption>Prepayment and inflation insights</figcaption>
+            </figure>
+          </div>
+        </div>
+      </article>
+
+      <article class="case" aria-labelledby="c5">
+        <div class="case-text">
+          <p class="case-client">New Heights Real Estate, Dubai</p>
+          <h3 id="c5">Dubai Real Estate Expo campaign</h3>
+          <p class="case-summary">A time-limited site for a one-day property expo with more than 20 developers, rebranded from an earlier campaign instead of rebuilt.</p>
+          <ul class="points">
+            <li>Off-plan property listings with price, location and payment plan at a glance.</li>
+            <li>A two-step "Reserve your free seat" flow connected to the CRM, designed to be quick on a phone.</li>
+          </ul>
+          <p class="stack"><b>Built with</b> Next.js, TypeScript, Tailwind CSS, LeadRat CRM API, Azure</p>
+          <p class="case-note">The event has ended, so the site is no longer public.</p>
+        </div>
+        <div class="case-media">
+          <div class="showcase">
+            <button class="zoom" type="button" data-full="expo-1600.webp" data-caption="Dubai Real Estate Expo, Diwali campaign home page">
+              <span class="frame">
+                <span class="frame-bar"><i></i><i></i><i></i><span class="frame-url">Dubai Real Estate Expo, Diwali 2026</span></span>
+                <img src="expo-800.webp" srcset="expo-800.webp 800w, expo-1600.webp 1600w" sizes="(max-width: 1023px) 92vw, 640px" width="800" height="385" loading="lazy" alt="Expo campaign home page inviting visitors to register for free">
+              </span>
+            </button>
+          </div>
+          <div class="details">
+            <figure class="shot">
+              <button class="zoom" type="button" data-full="expo-listings-1600.webp" data-caption="Off-plan property listing cards">
+                <img src="expo-listings-800.webp" width="800" height="385" loading="lazy" alt="Grid of off-plan property cards with starting prices">
+              </button>
+              <figcaption>Property listings</figcaption>
+            </figure>
+            <figure class="shot">
+              <button class="zoom" type="button" data-full="expo-modal-1600.webp" data-caption="Two-step seat reservation">
+                <img src="expo-modal-800.webp" width="800" height="385" loading="lazy" alt="Seat reservation form with name, email and phone">
+              </button>
+              <figcaption>Two-step seat reservation</figcaption>
+            </figure>
+          </div>
+        </div>
+      </article>
+
+      <div class="hidden-work">
+        <div>
+          <h3>Systems I can't show publicly</h3>
+          <p>Much of my work runs behind a login and holds customer or compliance data, so there are no screenshots here. I'm happy to walk through any of these in an interview.</p>
+        </div>
+        <ul class="sys">
+          <li>Real estate portal for buying, selling and renting property, with agent, enquiry and admin/CRM modules<span>New Heights</span></li>
+          <li>Mortgage portal (mini-CRM) for lead assignment, follow-up and customer records<span>New Heights</span></li>
+          <li>Event staff portal with status workflow, automated emails and analytics dashboards<span>Filmfare Middle East</span></li>
+          <li>AML Transaction Monitoring System with case management for compliance teams<span>Circuit Computer</span></li>
+          <li>KYC onboarding and enhanced due diligence workflows using a risk-based approach<span>Circuit Computer</span></li>
+          <li>Money exchange applications in Angular and Vue.js<span>Circuit Computer</span></li>
+          <li>ERP modules for Accounts, HR and E-Documents<span>Swati Technologies</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="design" aria-labelledby="design-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="design-title">Product design</h2>
+        <p>I design in Figma before I build, so the screens I ship match the design. These are app concepts from my Dribbble.</p>
+      </div>
+      <ul class="designs">
+        <li>
+          <button class="zoom" type="button" data-full="d-kyc-1400.webp" data-caption="UP KYC, digital identity verification app">
+            <img src="d-kyc-700.webp" srcset="d-kyc-700.webp 700w, d-kyc-1400.webp 1400w" sizes="(max-width: 767px) 92vw, (max-width: 1023px) 46vw, 380px" width="700" height="525" loading="lazy" alt="UP KYC app screens for document upload and selfie verification">
+          </button>
+          <h3>UP KYC</h3>
+          <p>A digital identity verification app with a step-by-step KYC flow, document upload and live selfie verification.</p>
+        </li>
+        <li>
+          <button class="zoom" type="button" data-full="d-transfer-1400.webp" data-caption="Money transfer and exchange app">
+            <img src="d-transfer-700.webp" srcset="d-transfer-700.webp 700w, d-transfer-1400.webp 1400w" sizes="(max-width: 767px) 92vw, (max-width: 1023px) 46vw, 380px" width="700" height="525" loading="lazy" alt="Money transfer app screens for beneficiaries and transfers">
+          </button>
+          <h3>Money transfer app</h3>
+          <p>A money transfer and exchange app designed for fast, secure and easy digital transactions.</p>
+        </li>
+        <li>
+          <button class="zoom" type="button" data-full="d-valet-1400.webp" data-caption="Pet and valet services app for SlideX">
+            <img src="d-valet-700.webp" srcset="d-valet-700.webp 700w, d-valet-1400.webp 1400w" sizes="(max-width: 767px) 92vw, (max-width: 1023px) 46vw, 380px" width="700" height="525" loading="lazy" alt="Pet and valet app login and booking screens">
+          </button>
+          <h3>Pet and valet app</h3>
+          <p>A mobile app for booking valet and pet care services with real-time booking status, built for SlideX.</p>
+        </li>
+      </ul>
+      <p class="more"><a href="https://dribbble.com/kaynat-saeed" target="_blank" rel="noopener">See all designs on Dribbble</a></p>
+    </div>
+  </section>
+
+  <section class="section experience" id="experience" aria-labelledby="exp-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="exp-title">Experience</h2>
+        <p>Nearly 5 years across fintech, enterprise ERP and real estate, in Dubai and remotely.</p>
+      </div>
+      <ol class="timeline">
+        <li class="role">
+          <p class="role-dates">Jan 2026 – Present</p>
+          <div>
+            <h3>Software Engineer, Full-Stack</h3>
+            <p class="role-org">New Heights Real Estate LLC, Dubai</p>
+            <ul class="points">
+              <li>Building the company's real estate portal for buying, selling and renting property: advanced search and filters, agent and enquiry management, and admin/CRM modules.</li>
+              <li>Delivered the Filmfare Middle East event platform end to end: Next.js registration site, Clean Architecture .NET Web API with unit tests, and a staff portal with role-based access, automated emails and analytics.</li>
+              <li>Built campaign landing pages, developer launch sites and a Google Ads promotions platform with smart lead tracking by campaign, source and time, routed to the LeadRat CRM API.</li>
+              <li>Built a role-based mortgage portal (mini-CRM) and the New Heights Financial Broker website with five mortgage calculators.</li>
+              <li>Own DevOps for six apps: Docker, Azure Container Apps, CI/CD pipelines, Azure SQL and cost-optimised scale-to-zero hosting.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="role">
+          <p class="role-dates">Jan 2024 – Dec 2025</p>
+          <div>
+            <h3>Software Developer, Angular and Vue.js</h3>
+            <p class="role-org">Circuit Computer, Dubai (money exchange and AML/KYC)</p>
+            <ul class="points">
+              <li>Developed the front end of an AML Transaction Monitoring System (TMS), including case management screens for compliance teams.</li>
+              <li>Built and maintained money exchange applications in Angular and Vue.js with reusable, modular components.</li>
+              <li>Built KYC onboarding and enhanced due diligence (EDD) screens following a risk-based approach.</li>
+              <li>Integrated REST APIs with backend, product and compliance teams, designed interfaces in Figma, and automated repetitive tasks with Python.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="role">
+          <p class="role-dates">Jun 2023 – Dec 2024</p>
+          <div>
+            <h3>Software Engineer, Vue.js and UI/UX</h3>
+            <p class="role-org">SlideX, United States (part-time, remote)</p>
+            <ul class="points">
+              <li>Built responsive, mobile-first front ends for pet care and valet parking apps with Vue.js 3 and Material UI.</li>
+              <li>Designed user flows in Figma, integrated REST APIs and deployed production releases to Microsoft Azure.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="role">
+          <p class="role-dates">Jan 2022 – Dec 2023</p>
+          <div>
+            <h3>Software Engineer, Angular and .NET</h3>
+            <p class="role-org">Swati Technologies, Pakistan (ERP systems)</p>
+            <ul class="points">
+              <li>Designed and developed ERP modules for Accounts, HR and E-Documents with Angular, TypeScript and PrimeNG, and C#, ASP.NET Core Web API and SQL Server.</li>
+              <li>Built reusable, cross-browser components and optimised performance on high-use ERP screens.</li>
+              <li>Turned functional and regulatory requirements from business teams into working features.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="skills" aria-labelledby="skills-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="skills-title">Skills</h2>
+        <p>The tools I use every week, grouped by where they sit in the stack.</p>
+      </div>
+      <div class="skills">
+        <div>
+          <h3>Front end</h3>
+          <ul class="tags"><li>Next.js</li><li>React</li><li>Angular</li><li>Vue.js</li><li>TypeScript</li><li>JavaScript</li><li>HTML5</li><li>CSS3</li><li>Tailwind CSS</li><li>Material UI</li><li>PrimeNG</li><li>Bootstrap</li></ul>
+        </div>
+        <div>
+          <h3>Back end</h3>
+          <ul class="tags"><li>C#</li><li>ASP.NET Core Web API</li><li>.NET</li><li>Entity Framework</li><li>REST APIs</li><li>Clean Architecture</li><li>Unit testing</li></ul>
+        </div>
+        <div>
+          <h3>Data</h3>
+          <ul class="tags"><li>SQL Server</li><li>Azure SQL</li><li>Database design</li><li>Funnel analytics</li><li>Reporting</li></ul>
+        </div>
+        <div>
+          <h3>Cloud and DevOps</h3>
+          <ul class="tags"><li>Microsoft Azure</li><li>Azure Container Apps</li><li>Blob Storage</li><li>Docker</li><li>CI/CD pipelines</li><li>Git</li><li>GitHub</li></ul>
+        </div>
+        <div>
+          <h3>Domains</h3>
+          <ul class="tags"><li>Fintech</li><li>AML</li><li>KYC/EDD</li><li>Money exchange</li><li>ERP</li><li>CRM</li><li>Real estate</li><li>Mortgage</li></ul>
+        </div>
+        <div>
+          <h3>Design and tools</h3>
+          <ul class="tags"><li>Figma</li><li>UI/UX design</li><li>Responsive design</li><li>Accessibility</li><li>Design systems</li><li>Python</li></ul>
+        </div>
+      </div>
+
+      <div class="creds">
+        <div>
+          <h3>BS Software Engineering</h3>
+          <p>Virtual University of Pakistan, 2016 – 2021</p>
+        </div>
+        <div>
+          <h3>One Million Prompters: Prompt Engineering</h3>
+          <p>Dubai Future Foundation and Dubai Centre for AI, 2026</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <div>
+        <h2 id="contact-title">Hiring a full-stack developer in the UAE?</h2>
+        <p class="contact-lede">I'm open to full-stack, software engineer and front-end roles in Dubai and across the UAE. Email or call me, or download my CV.</p>
+        <a class="btn btn-solid" href="Kaynat-Saeed-Full-Stack-Developer-CV.pdf" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>
+          Download CV (PDF)
+        </a>
+      </div>
+      <div>
+        <ul class="reach">
+          <li><span>Email</span><a href="mailto:kaynatvu@gmail.com">kaynatvu@gmail.com</a></li>
+          <li><span>Phone</span><a href="tel:+971544528190">+971 54 452 8190</a></li>
+          <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/kaynat-saeed" target="_blank" rel="noopener">linkedin.com/in/kaynat-saeed</a></li>
+          <li><span>Dribbble</span><a href="https://dribbble.com/kaynat-saeed" target="_blank" rel="noopener">dribbble.com/kaynat-saeed</a></li>
+        </ul>
+        <ul class="facts">
+          <li>Based in Dubai, UAE</li>
+          <li>UAE employment visa, valid to April 2028</li>
+          <li>Notice period: 1 month</li>
+          <li>Languages: English, Urdu, Hindi</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 Kaynat Saeed</p>
+    <p>Client websites shown were designed and developed for New Heights Real Estate, Dubai.</p>
+  </div>
+</footer>
+
+<dialog class="lightbox" id="lightbox" aria-label="Enlarged screenshot">
+  <img src="" alt="" id="lightbox-img">
+  <div class="lightbox-bar">
+    <p id="lightbox-caption"></p>
+    <button class="btn btn-line lightbox-close" type="button" id="lightbox-close">Close</button>
+  </div>
+</dialog>
+
+<script>
+(function () {
+  var dialog = document.getElementById('lightbox');
+  if (!dialog || typeof dialog.showModal !== 'function') return;
+  var img = document.getElementById('lightbox-img');
+  var cap = document.getElementById('lightbox-caption');
+  var lastTrigger = null;
+  document.querySelectorAll('.zoom[data-full]').forEach(function (btn) {
+    btn.setAttribute('aria-label', 'Enlarge screenshot: ' + btn.dataset.caption);
+    btn.addEventListener('click', function () {
+      lastTrigger = btn;
+      img.src = btn.dataset.full;
+      img.alt = btn.dataset.caption;
+      cap.textContent = btn.dataset.caption;
+      dialog.showModal();
+    });
+  });
+  document.getElementById('lightbox-close').addEventListener('click', function () { dialog.close(); });
+  dialog.addEventListener('click', function (e) { if (e.target === dialog) dialog.close(); });
+  dialog.addEventListener('close', function () { img.src = ''; if (lastTrigger) lastTrigger.focus(); });
+})();
+</script>
+</body>
+</html>
