@@ -341,7 +341,7 @@ button { font: inherit; color: inherit; }
 }
 
 /* ---------- Behind the login ---------- */
-.private { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); gap: clamp(32px, 6vw, 96px); align-items: start; margin-top: clamp(80px, 10vw, 140px); }
+.private { margin-top: clamp(96px, 12vw, 160px); }
 .private h3 { font-family: var(--serif); font-weight: 300; font-size: clamp(2.25rem, 4.2vw, 3.75rem); line-height: 1; margin-bottom: 18px; }
 .private > div > p { color: var(--muted); max-width: 40ch; }
 .rows { padding: 6px clamp(20px, 2.6vw, 32px); border-radius: 24px; }
@@ -430,7 +430,7 @@ button { font: inherit; color: inherit; }
 .lb-bar p { color: var(--muted); font-size: .9375rem; }
 
 /* ---------- Mobile menu ---------- */
-.menu { position: fixed; inset: 0; z-index: 85; display: flex; flex-direction: column; justify-content: center; gap: 32px; padding: 96px var(--gutter) 40px; background: rgba(7, 10, 18, .97); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); opacity: 0; visibility: hidden; transition: opacity .5s ease, visibility 0s .5s; }
+.menu { position: fixed; inset: 0; z-index: 75; display: flex; flex-direction: column; justify-content: center; gap: 32px; padding: 96px var(--gutter) 40px; background: rgba(7, 10, 18, .97); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); opacity: 0; visibility: hidden; transition: opacity .5s ease, visibility 0s .5s; }
 .menu.is-open { opacity: 1; visibility: visible; transition: opacity .5s ease; }
 .menu ul { display: grid; gap: 4px; }
 .menu a { display: block; font-family: var(--serif); font-size: clamp(2.75rem, 12vw, 4rem); line-height: 1.1; text-decoration: none; transform: translateY(30px); opacity: 0; transition: transform .8s var(--ease), opacity .6s ease; }
@@ -455,7 +455,7 @@ main, .footer { position: relative; z-index: 1; }
 .skill, .cred { position: relative; }
 [data-glow]::after { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; opacity: 0; transition: opacity .5s ease; background: radial-gradient(380px circle at var(--mx, 50%) var(--my, 50%), rgba(241, 221, 176, .12), transparent 60%); pointer-events: none; }
 [data-glow]:hover::after { opacity: 1; }
-.glass-chip { position: absolute; z-index: 3; display: inline-flex; align-items: center; gap: 10px; padding: 10px 16px; border-radius: 16px; font-size: .8125rem; line-height: 1.3; color: var(--ink); white-space: nowrap; }
+.glass-chip { position: absolute; z-index: 3; background: linear-gradient(135deg, rgba(14, 20, 36, .72), rgba(10, 14, 26, .5)) !important; border-color: rgba(255, 255, 255, .14) !important; box-shadow: 0 18px 40px -16px rgba(0, 0, 0, .7), inset 0 1px 0 rgba(255, 255, 255, .1) !important; display: inline-flex; align-items: center; gap: 10px; padding: 10px 16px; border-radius: 16px; font-size: .8125rem; line-height: 1.3; color: var(--ink); white-space: nowrap; }
 .glass-chip small { display: block; color: var(--muted); font-size: .75rem; }
 .glass-chip .pulse { width: 7px; height: 7px; }
 .chip-a { left: -4%; top: 14%; animation: float 6s ease-in-out infinite; }
@@ -506,9 +506,59 @@ main, .footer { position: relative; z-index: 1; }
   .js .portrait.is-in .portrait-img { scale: 1.08; }
 }
 
+/* ---------- Top bar & dock ---------- */
+.topbar { position: absolute; top: 0; left: 0; right: 0; z-index: 70; }
+.topbar-inner { display: flex; align-items: center; gap: clamp(20px, 2.6vw, 36px); padding-top: clamp(20px, 3.4vh, 34px); }
+.brand { margin-right: auto; font-weight: 500; font-size: 1rem; letter-spacing: -0.01em; text-decoration: none; }
+.top-nav ul { display: flex; gap: clamp(20px, 2.6vw, 40px); }
+.top-nav a { position: relative; color: var(--muted); font-size: .9375rem; text-decoration: none; transition: color .3s ease; }
+.top-nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 1px; background: var(--gold); transform: scaleX(0); transform-origin: right; transition: transform .6s var(--ease); }
+.top-nav a:hover { color: var(--ink); }
+.top-nav a:hover::after { transform: scaleX(1); transform-origin: left; }
+.dock { position: fixed; top: 16px; left: 50%; z-index: 80; display: flex; align-items: center; gap: 2px; padding: 6px; border-radius: 999px; transform: translate(-50%, -160%); opacity: 0; pointer-events: none; transition: transform .8s var(--ease), opacity .5s ease; }
+.dock.is-visible { transform: translate(-50%, 0); opacity: 1; pointer-events: auto; }
+.dock a { position: relative; z-index: 1; display: block; padding: 9px 16px; border-radius: 999px; color: var(--muted); font-size: .875rem; line-height: 1.2; text-decoration: none; white-space: nowrap; transition: color .3s ease; }
+.dock a:hover, .dock a.is-active { color: var(--ink); }
+.dock .dock-brand { color: var(--ink); font-weight: 500; padding: 9px 18px 9px 14px; margin-right: 4px; border-radius: 0; border-right: 1px solid var(--line-2); }
+.dock .dock-contact { margin-left: 4px; color: #F6EEDC; background: linear-gradient(135deg, rgba(241, 221, 176, .2), rgba(212, 180, 122, .06)); box-shadow: inset 0 0 0 1px rgba(241, 221, 176, .3); }
+.dock-pill { position: absolute; z-index: 0; top: 6px; left: 0; height: calc(100% - 12px); width: 0; border-radius: 999px; background: rgba(255, 255, 255, .08); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .1); opacity: 0; transition: transform .6s var(--ease), width .6s var(--ease), opacity .3s ease; }
+
+/* ---------- Hero ---------- */
+.hero .hero-inner { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .85fr); gap: clamp(32px, 5vw, 88px); align-items: center; min-height: 100svh; padding-top: clamp(104px, 15vh, 150px); padding-bottom: clamp(96px, 13vh, 130px); }
+.hero-kicker { color: var(--muted); font-size: .9688rem; margin-bottom: clamp(14px, 2.6vh, 26px); }
+.hero .hero-name { font-size: clamp(3.75rem, min(10.5vw, 18.5vh), 10rem); line-height: .9; letter-spacing: -0.055em; margin: 0 0 clamp(22px, 4vh, 40px) -0.05em; }
+.hero-name .line { display: block; }
+.hero-name .line-2 { padding-left: .85em; }
+.hero .hero-statement { font-size: clamp(1.35rem, 1.9vw, 1.8rem); }
+.hero-media { position: relative; justify-self: end; width: 100%; max-width: 460px; perspective: 1400px; }
+.hero-media .hero-tilt { position: relative; inset: auto; }
+.hero-media .portrait { max-width: none; }
+.hero-media .chip-a { left: -22%; top: 14%; }
+.hero-media .chip-b { right: -8%; bottom: 14%; }
+.hero-foot { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 20px; border-top: 1px solid var(--line); color: var(--dim); font-size: .875rem; }
+.hero-foot p { margin: 0; }
+.hero-foot .scroll-cue { position: static; transform: none; display: inline-flex; flex-direction: row; align-items: center; gap: 12px; color: var(--muted); font-size: .875rem; letter-spacing: 0; }
+.hero-foot .scroll-cue i { width: 34px; height: 1px; background: linear-gradient(90deg, var(--gold), transparent); animation: none; }
+
+/* ---------- Behind the login ---------- */
+.private-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.vault { display: flex; flex-direction: column; padding: clamp(24px, 2.6vw, 32px); border-radius: 22px; }
+.vault-head { display: flex; align-items: center; gap: 14px; padding-bottom: 18px; margin-bottom: 6px; border-bottom: 1px solid var(--line); }
+.vault-ic { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; flex: none; border: 1px solid rgba(212, 180, 122, .28); background: rgba(212, 180, 122, .06); color: var(--gold); }
+.vault-ic svg { width: 18px; height: 18px; }
+.vault h3 { font-family: var(--serif); font-weight: 400; font-size: 1.125rem; line-height: 1.25; letter-spacing: -0.01em; }
+.vault h3 small { display: block; color: var(--dim); font-size: .8125rem; font-weight: 400; letter-spacing: 0; margin-top: 2px; }
+.vault ul { flex: 1; }
+.vault li { padding: 14px 0; border-bottom: 1px solid var(--line); color: var(--soft); font-size: .9688rem; line-height: 1.45; }
+.vault li:last-child { border-bottom: 0; }
+.vault-tag { align-self: flex-start; margin-top: 16px; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--line-2); color: var(--muted); font-size: .8125rem; }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 1023px) {
-  .hero-grid, .head, .private, .card, .contact-grid, .intro-grid { grid-template-columns: minmax(0, 1fr); }
+  .hero-grid, .head, .private, .card, .contact-grid, .intro-grid, .hero .hero-inner { grid-template-columns: minmax(0, 1fr); }
+  .hero-media { justify-self: start; max-width: 400px; margin-top: 8px; }
+  .hero .hero-inner { min-height: 0; padding-bottom: 110px; }
+  .private-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .portrait { justify-self: start; max-width: 380px; }
   .hero-grid { align-items: start; }
   .hero-visual { max-width: 640px; width: 100%; }
@@ -519,7 +569,8 @@ main, .footer { position: relative; z-index: 1; }
   .orb { justify-self: start; }
 }
 @media (max-width: 860px) {
-  .nav-links, .nav-cta .btn { display: none; }
+  .nav-links, .nav-cta .btn, .top-nav, .top-cta, .dock .dock-link { display: none; }
+  .dock .dock-brand { border-right: 0; margin-right: 0; }
   .menu-btn { display: inline-flex; align-items: center; gap: 10px; min-height: 42px; padding: 8px 18px; border-radius: 999px; border: 1px solid var(--line-2); background: rgba(237, 234, 227, .04); cursor: pointer; font-size: .9375rem; }
   .menu-btn i { position: relative; width: 16px; height: 1px; background: currentColor; transition: background-color .3s; }
   .menu-btn i::before, .menu-btn i::after { content: ""; position: absolute; left: 0; width: 100%; height: 1px; background: currentColor; transition: transform .5s var(--ease); }
@@ -533,7 +584,12 @@ main, .footer { position: relative; z-index: 1; }
   body { font-size: 1rem; }
   .nav { top: 12px; padding-left: 18px; }
   .hero-name { font-size: clamp(3.4rem, 17vw, 6rem); }
-  .hero-top .loc, .scroll-cue { display: none; }
+  .hero-top .loc, .scroll-cue, .hero-tech { display: none; }
+  .hero .hero-name { font-size: clamp(3.6rem, 19vw, 6.5rem); }
+  .hero-media { max-width: 320px; }
+  .hero-media .chip-a { left: -4%; top: 6%; }
+  .hero-media .chip-b { right: -4%; bottom: 8%; }
+  .private-grid { grid-template-columns: minmax(0, 1fr); }
   .stats, .cards4, .designs, .skill-grid, .creds, .reach { grid-template-columns: minmax(0, 1fr); }
   .stats div, .stats div + div { padding: 22px 0 0; border-left: 0; }
   .stats div + div { border-top: 1px solid var(--line); margin-top: 22px; }
@@ -574,21 +630,32 @@ main, .footer { position: relative; z-index: 1; }
 <div class="cursor" aria-hidden="true"><span class="cursor-ring"><em>View</em></span><span class="cursor-dot"></span></div>
 <a class="skip" href="#main">Skip to content</a>
 
-<header class="nav" id="nav">
-  <a class="nav-logo" href="#top">Kaynat Saeed</a>
-  <nav aria-label="Main">
-    <ul class="nav-links">
-      <li><a href="#work">Work</a></li>
-      <li><a href="#expertise">Expertise</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
-    </ul>
-  </nav>
-  <div class="nav-cta">
-    <a class="btn btn-gold btn-sm" href="#contact">Let's talk</a>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="#top">Kaynat Saeed</a>
+    <nav class="top-nav" aria-label="Main">
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-ghost btn-sm top-cta magnetic" href="#contact">Contact</a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu"><i></i><span>Menu</span></button>
   </div>
 </header>
+
+<nav class="dock glass" id="dock" aria-label="Section navigation">
+  <span class="dock-pill" aria-hidden="true"></span>
+  <a class="dock-brand" href="#top">Kaynat Saeed</a>
+  <a class="dock-link" href="#work" data-spy="work">Work</a>
+  <a class="dock-link" href="#expertise" data-spy="expertise">Expertise</a>
+  <a class="dock-link" href="#experience" data-spy="experience">Experience</a>
+  <a class="dock-link" href="#skills" data-spy="skills">Skills</a>
+  <a class="dock-link dock-contact" href="#contact" data-spy="contact">Contact</a>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu"><i></i><span>Menu</span></button>
+</nav>
 
 <div class="menu" id="menu" aria-hidden="true">
   <ul>
@@ -603,59 +670,49 @@ main, .footer { position: relative; z-index: 1; }
 </div>
 
 <main id="main">
-  <section class="hero" id="top" aria-labelledby="hero-name">
+  <section class="hero" id="top" aria-label="Introduction">
     <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
     <div class="wrap hero-inner">
-      <div class="hero-top hero-fade" style="--d:.05s">
-        <p class="status">Open to full-stack roles in the UAE</p>
-        <p class="loc">Dubai, UAE</p>
-      </div>
-
-      <h1 class="hero-name" id="hero-name" data-chars>Kaynat Saeed</h1>
-
-      <div class="hero-grid">
-        <div>
-          <p class="hero-statement hero-fade" style="--d:.15s">
-            <span class="sr-only">Full-stack developer building fintech and compliance software, ERP systems, property portals and lead-generation platforms.</span>
-            <span aria-hidden="true">Full-stack developer building</span>
-            <span class="rotator" aria-hidden="true">
-              <span class="is-active">fintech &amp; compliance software</span>
-              <span>ERP &amp; business portals</span>
-              <span>property portals</span>
-              <span>lead-generation platforms</span>
-            </span>
-          </p>
-          <p class="hero-sub hero-fade" style="--d:.25s">Nearly five years with Next.js, React, Angular and Vue.js, C#, ASP.NET Core and SQL Server, shipped with Docker, CI/CD and Microsoft Azure.</p>
-          <div class="hero-actions hero-fade" style="--d:.35s">
-            <a class="btn btn-gold magnetic" href="#work">View selected work
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </a>
-            <a class="btn btn-ghost magnetic" href="Kaynat-Saeed-Full-Stack-Developer-CV.pdf" download>Download CV
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>
-            </a>
-          </div>
+      <div class="hero-copy">
+        <p class="hero-kicker hero-fade" style="--d:.05s">Full-stack developer in Dubai, UAE</p>
+        <h1 class="hero-name" id="hero-name" aria-label="Kaynat Saeed"><span class="line" data-chars>Kaynat</span><span class="line line-2" data-chars>Saeed</span></h1>
+        <p class="hero-statement hero-fade" style="--d:.2s">
+          <span class="sr-only">I build fintech and compliance software, ERP systems, property portals and lead-generation platforms.</span>
+          <span aria-hidden="true">I build</span>
+          <span class="rotator" aria-hidden="true">
+            <span class="is-active">fintech &amp; compliance software</span>
+            <span>ERP &amp; business portals</span>
+            <span>property portals</span>
+            <span>lead-generation platforms</span>
+          </span>
+        </p>
+        <p class="hero-sub hero-fade" style="--d:.3s">Nearly five years with Next.js, React, Angular and Vue.js, C#, ASP.NET Core and SQL Server, shipped with Docker, CI/CD and Microsoft Azure.</p>
+        <div class="hero-actions hero-fade" style="--d:.4s">
+          <a class="btn btn-gold magnetic" href="#work">View selected work
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost magnetic" href="Kaynat-Saeed-Full-Stack-Developer-CV.pdf" download>Download CV
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>
+          </a>
         </div>
-
-        <div class="hero-visual" aria-hidden="true">
-          <div class="hero-tilt" id="hero-tilt">
-            <span class="frame hv-back float-b">
-              <span class="frame-bar"><i></i><i></i><i></i><span class="frame-url">influencers.filmfaremiddleeast.com</span></span>
-              <img src="filmfare-800.webp" srcset="filmfare-800.webp 800w, filmfare-1600.webp 1600w" sizes="(max-width: 1023px) 80vw, 480px" width="800" height="385" alt="" fetchpriority="high">
-            </span>
-            <span class="frame hv-front float-a">
-              <span class="frame-bar"><i></i><i></i><i></i><span class="frame-url">yas-residences.abu-dhabi-real-estate.ae</span></span>
-              <img src="yas-800.webp" srcset="yas-800.webp 800w, yas-1600.webp 1600w" sizes="(max-width: 1023px) 82vw, 500px" width="800" height="385" alt="" fetchpriority="high">
-            </span>
-            <span class="phone hv-phone float-b">
-              <img src="m-promotions-420.webp" width="420" height="910" alt="">
-            </span>
-            <span class="glass-chip glass chip-a"><span class="chip-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M13.5 6l-3 12"/></svg></span><span>Next.js + .NET<small>Full-stack, end to end</small></span></span>
-            <span class="glass-chip glass chip-b"><span>6 apps live on Azure<small>Docker and CI/CD</small></span></span>
-          </div>
+      </div>
+      <div class="hero-media">
+        <div class="hero-tilt" id="hero-tilt">
+          <figure class="portrait hero-portrait-card">
+            <div class="portrait-arch">
+              <img class="portrait-img" data-depth="-22" src="kaynat-portrait-card-1000.webp" srcset="kaynat-portrait-card-560.webp 560w, kaynat-portrait-card-1000.webp 1000w" sizes="(max-width: 1023px) 80vw, 460px" width="1000" height="1250" fetchpriority="high" alt="Kaynat Saeed, full-stack developer in Dubai">
+            </div>
+          </figure>
+          <span class="glass-chip glass chip-a"><span class="chip-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M13.5 6l-3 12"/></svg></span><span>Next.js + .NET<small>Full-stack, end to end</small></span></span>
+          <span class="glass-chip glass chip-b"><span>6 apps live on Azure<small>Docker and CI/CD</small></span></span>
         </div>
       </div>
     </div>
-    <a class="scroll-cue" href="#intro" aria-label="Scroll to introduction"><span>Scroll</span><i></i></a>
+    <div class="wrap hero-foot hero-fade" style="--d:.6s">
+      <p>Open to full-stack roles in the UAE</p>
+      <p class="hero-tech">Next.js &nbsp;/&nbsp; React &nbsp;/&nbsp; Angular &nbsp;/&nbsp; .NET &nbsp;/&nbsp; SQL Server &nbsp;/&nbsp; Azure</p>
+      <a class="scroll-cue" href="#intro">Scroll <i></i></a>
+    </div>
   </section>
 
   <div class="marquee" aria-hidden="true">
@@ -673,12 +730,6 @@ main, .footer { position: relative; z-index: 1; }
     <div class="wrap">
       <div class="intro-grid">
         <p class="statement" data-scrub>For nearly five years I've built software that moves money, keeps compliance teams in control and sells property: AML monitoring, enterprise ERP, and launch platforms for projects by <em>Emaar, Modon and Azizi.</em></p>
-        <figure class="portrait" data-reveal>
-          <div class="portrait-arch">
-            <img class="portrait-img" data-depth="-22" src="kaynat-portrait-card-1000.webp" srcset="kaynat-portrait-card-560.webp 560w, kaynat-portrait-card-1000.webp 1000w" sizes="(max-width: 1023px) 80vw, 440px" width="1000" height="1250" loading="lazy" alt="Kaynat Saeed, full-stack developer in Dubai">
-          </div>
-          <figcaption class="portrait-tag glass"><span>Kaynat Saeed<small>Full-stack developer, Dubai</small></span></figcaption>
-        </figure>
       </div>
       <dl class="stats">
         <div data-reveal><dt>Nearly five years of full-stack experience</dt><dd><span data-count="5">5</span><sup>yrs</sup></dd></div>
@@ -893,19 +944,39 @@ main, .footer { position: relative; z-index: 1; }
       </div>
 
       <div class="private">
-        <div data-reveal>
-          <h3>Behind the login</h3>
-          <p>Much of my work holds customer or compliance data, so it can't be shown publicly. I'm happy to walk through any of it in an interview.</p>
+        <div class="head">
+          <h2 class="h2" data-split>Behind the login</h2>
+          <p data-reveal>Much of my work holds customer or compliance data, so it can't be shown publicly. I'm happy to walk through any of it in an interview.</p>
         </div>
-        <ul class="rows glass" data-reveal style="--d:.1s">
-          <li>Real estate portal for buying, selling and renting property<span>New Heights</span></li>
-          <li>Mortgage portal (mini-CRM) for lead assignment and follow-up<span>New Heights</span></li>
-          <li>Event staff portal with workflow, automated emails and analytics<span>Filmfare Middle East</span></li>
-          <li>AML Transaction Monitoring System with case management<span>Circuit Computer</span></li>
-          <li>KYC onboarding and enhanced due diligence workflows<span>Circuit Computer</span></li>
-          <li>Money exchange applications in Angular and Vue.js<span>Circuit Computer</span></li>
-          <li>ERP modules for Accounts, HR and E-Documents<span>Swati Technologies</span></li>
-        </ul>
+        <div class="private-grid">
+          <article class="vault glass" data-glow data-reveal>
+            <div class="vault-head"><span class="vault-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg></span><h3>New Heights Real Estate<small>2026 – Present</small></h3></div>
+            <ul>
+              <li>Real estate portal for buying, selling and renting property</li>
+              <li>Mortgage portal (mini-CRM) for lead assignment and follow-up</li>
+              <li>Event staff portal with workflow, automated emails and analytics</li>
+            </ul>
+            <span class="vault-tag">Real estate and mortgage</span>
+          </article>
+          <article class="vault glass" data-glow data-reveal style="--d:.1s">
+            <div class="vault-head"><span class="vault-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg></span><h3>Circuit Computer<small>2024 – 2025</small></h3></div>
+            <ul>
+              <li>AML Transaction Monitoring System with case management</li>
+              <li>KYC onboarding and enhanced due diligence workflows</li>
+              <li>Money exchange applications in Angular and Vue.js</li>
+            </ul>
+            <span class="vault-tag">Fintech and compliance</span>
+          </article>
+          <article class="vault glass" data-glow data-reveal style="--d:.2s">
+            <div class="vault-head"><span class="vault-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg></span><h3>Swati Technologies<small>2022 – 2023</small></h3></div>
+            <ul>
+              <li>Accounts module for an enterprise ERP</li>
+              <li>HR module with employee records and workflows</li>
+              <li>E-Documents module for document management</li>
+            </ul>
+            <span class="vault-tag">Enterprise ERP</span>
+          </article>
+        </div>
       </div>
     </div>
   </section>
@@ -1096,8 +1167,8 @@ main, .footer { position: relative; z-index: 1; }
   var lerp = function (a, b, t) { return a + (b - a) * t; };
 
   /* ---------- Text splitting ---------- */
-  function splitChars(el) {
-    var text = el.textContent.trim(), i = 0;
+  function splitChars(el, start) {
+    var text = el.textContent.trim(), i = start || 0;
     el.setAttribute('aria-label', text);
     el.textContent = '';
     text.split(' ').forEach(function (word, wi, arr) {
@@ -1111,6 +1182,7 @@ main, .footer { position: relative; z-index: 1; }
       el.appendChild(w);
       if (wi < arr.length - 1) el.appendChild(document.createTextNode(' '));
     });
+    return i;
   }
   function splitWords(el) {
     var text = el.textContent.trim();
@@ -1136,7 +1208,8 @@ main, .footer { position: relative; z-index: 1; }
       });
     });
   }
-  $$('[data-chars]').forEach(splitChars);
+  var charOffset = 0;
+  $$('[data-chars]').forEach(function (el) { charOffset = splitChars(el, charOffset); });
   if (!reduce) $$('[data-split]').forEach(splitWords);
   var scrubEl = $('[data-scrub]');
   if (scrubEl && !reduce) splitScrub(scrubEl);
@@ -1144,7 +1217,11 @@ main, .footer { position: relative; z-index: 1; }
 
   /* ---------- Loader & hero intro ---------- */
   var loader = $('.loader');
-  function startHero() { document.body.classList.add('is-ready'); }
+  function startHero() {
+    document.body.classList.add('is-ready');
+    var hp = $('.hero .portrait');
+    if (hp) setTimeout(function () { hp.classList.add('is-in'); }, 350);
+  }
   if (reduce || doc.classList.contains('intro-seen') || !loader) {
     if (loader) loader.remove();
     requestAnimationFrame(function () { requestAnimationFrame(startHero); });
@@ -1216,18 +1293,21 @@ main, .footer { position: relative; z-index: 1; }
   if (document.readyState === 'complete') initLenis(); else window.addEventListener('load', initLenis);
 
   /* ---------- Mobile menu ---------- */
-  var menu = $('#menu'), menuBtn = $('.menu-btn');
+  var menu = $('#menu'), menuBtns = $$('.menu-btn'), dock = $('#dock');
   function closeMenu() {
     if (!menu.classList.contains('is-open')) return;
     menu.classList.remove('is-open'); menu.setAttribute('aria-hidden', 'true');
-    menuBtn.setAttribute('aria-expanded', 'false'); menuBtn.querySelector('span').textContent = 'Menu';
+    menuBtns.forEach(function (b) { b.setAttribute('aria-expanded', 'false'); b.querySelector('span').textContent = 'Menu'; });
     if (lenis) lenis.start();
   }
-  menuBtn.addEventListener('click', function () {
-    if (menu.classList.contains('is-open')) { closeMenu(); return; }
-    menu.classList.add('is-open'); menu.setAttribute('aria-hidden', 'false');
-    menuBtn.setAttribute('aria-expanded', 'true'); menuBtn.querySelector('span').textContent = 'Close';
-    if (lenis) lenis.stop();
+  menuBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      if (menu.classList.contains('is-open')) { closeMenu(); return; }
+      menu.classList.add('is-open'); menu.setAttribute('aria-hidden', 'false');
+      dock.classList.add('is-visible');
+      menuBtns.forEach(function (b) { b.setAttribute('aria-expanded', 'true'); b.querySelector('span').textContent = 'Close'; });
+      if (lenis) lenis.stop();
+    });
   });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
 
@@ -1306,11 +1386,20 @@ main, .footer { position: relative; z-index: 1; }
   }
 
   /* ---------- Scroll-linked loop ---------- */
-  var nav = $('#nav'), bar = $('.progress span'), track = $('#marquee');
+  var bar = $('.progress span'), track = $('#marquee');
+  var pill = $('.dock-pill'), spyLinks = $$('.dock-link[data-spy]');
+  var spySecs = spyLinks.map(function (l) { return document.getElementById(l.dataset.spy); });
+  var activeSpy = null;
+  function movePill(link) {
+    if (!pill) return;
+    if (!link || link.classList.contains('dock-contact') || !link.offsetWidth) { pill.style.opacity = '0'; return; }
+    pill.style.opacity = '1'; pill.style.width = link.offsetWidth + 'px';
+    pill.style.transform = 'translateX(' + link.offsetLeft + 'px)';
+  }
   var cards = $$('#stack .card'), timeline = $('#timeline'), tlFill = $('.tl-fill');
   var stackMQ = window.matchMedia('(min-width: 1024px) and (min-height: 700px)');
   var lastY = -1, prevY = window.scrollY, marqueeX = 0, velocity = 0, groupW = 0, dirty = true;
-  var heroName = $('#hero-name'), heroVisual = $('.hero-visual');
+  var heroName = $('#hero-name'), heroVisual = $('.hero-media');
   var band = $('.band'), tband = $('.tband');
   var bandRows = $$('.band-row').map(function (el) { return { el: el, dir: +el.dataset.dir, base: 0 }; });
   var tRows = $$('.tband-row').map(function (el) { return { el: el, dir: +el.dataset.dir, base: 0 }; });
@@ -1330,6 +1419,16 @@ main, .footer { position: relative; z-index: 1; }
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
 
   function update(y, vh) {
+    var act = null, bestTop = -Infinity;
+    for (var si = 0; si < spySecs.length; si++) {
+      if (!spySecs[si]) continue;
+      var st = spySecs[si].getBoundingClientRect().top;
+      if (st <= vh * 0.4 && st > bestTop) { bestTop = st; act = spyLinks[si]; }
+    }
+    if (act !== activeSpy) {
+      spyLinks.forEach(function (l) { l.classList.toggle('is-active', l === act); });
+      activeSpy = act; movePill(act);
+    }
     var max = doc.scrollHeight - vh;
     if (bar) bar.style.transform = 'scaleX(' + (max > 0 ? clamp(y / max, 0, 1) : 0) + ')';
     if (reduce) return;
@@ -1386,8 +1485,7 @@ main, .footer { position: relative; z-index: 1; }
     var y = window.scrollY, vh = window.innerHeight, dy = y - prevY;
     velocity = lerp(velocity, dy, 0.12);
     if (dy !== 0) {
-      nav.classList.toggle('is-solid', y > 40);
-      if (Math.abs(dy) > 1 && !menu.classList.contains('is-open')) nav.classList.toggle('is-hidden', dy > 0 && y > 320);
+      dock.classList.toggle('is-visible', y > vh * 0.55 || menu.classList.contains('is-open'));
     }
     if (y !== lastY || dirty) { update(y, vh); lastY = y; dirty = false; }
     if (!reduce) {
