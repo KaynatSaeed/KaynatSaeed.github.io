@@ -201,7 +201,7 @@ button { font: inherit; color: inherit; }
   line-height: .92; letter-spacing: -0.025em; margin-left: -0.04em;
 }
 .hero-name .word { display: inline-block; white-space: nowrap; }
-.hero-name .ch { display: inline-block; background: linear-gradient(180deg, #F7F3EA 35%, #C9BB9B 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero-name .ch { display: inline-block; padding-bottom: .2em; margin-bottom: -.2em; background: linear-gradient(180deg, #F7F3EA 30%, #C9BB9B 82%); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr); gap: clamp(28px, 5vw, 80px); align-items: end; }
 .hero-statement { font-family: var(--serif); font-size: clamp(1.75rem, 2.7vw, 2.5rem); line-height: 1.15; margin-bottom: 16px; }
 .rotator { position: relative; display: grid; color: var(--gold-hi); font-style: italic; overflow: hidden; padding-bottom: .12em; }
@@ -456,10 +456,11 @@ main, .footer { position: relative; z-index: 1; }
 /* ---------- Parallax gallery band ---------- */
 .band { position: relative; z-index: 1; height: clamp(560px, 92vh, 820px); overflow: hidden; display: grid; place-items: center; }
 .band-rows { position: absolute; left: -20%; right: -20%; top: 50%; display: grid; gap: clamp(12px, 1.6vw, 20px); transform: translateY(-50%) rotate(-7deg); }
+.band { -webkit-mask-image: linear-gradient(transparent, #000 16%, #000 84%, transparent); mask-image: linear-gradient(transparent, #000 16%, #000 84%, transparent); }
 .band-row { display: flex; gap: clamp(12px, 1.6vw, 20px); width: max-content; will-change: transform; }
 .tile { display: block; flex: none; width: clamp(240px, 25vw, 400px); border-radius: 14px; overflow: hidden; box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .9), 0 0 0 1px rgba(237, 234, 227, .08); }
 .tile img { width: 100%; aspect-ratio: 2.08 / 1; object-fit: cover; object-position: top; filter: saturate(.9) brightness(.82); }
-.band::before { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(var(--bg) 0%, rgba(7, 10, 18, .15) 22%, rgba(7, 10, 18, .15) 78%, var(--bg) 100%), radial-gradient(60% 55% at 50% 50%, rgba(7, 10, 18, .55), transparent 75%); }
+.band::before { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: radial-gradient(60% 60% at 50% 50%, rgba(7, 10, 18, .6), rgba(7, 10, 18, .15) 80%); }
 .band-glass { position: relative; z-index: 2; width: min(560px, calc(100% - 2 * var(--gutter))); padding: clamp(28px, 4vw, 48px); border-radius: 28px; text-align: center; }
 .band-glass h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1; margin-bottom: 14px; }
 .band-glass p { color: var(--soft); margin: 0 auto 26px; max-width: 40ch; }
@@ -476,9 +477,31 @@ main, .footer { position: relative; z-index: 1; }
 .card-main:hover [data-parallax] { scale: 1.17; }
 .design-img:hover [data-parallax] { scale: 1.18; }
 
+/* ---------- Portrait ---------- */
+.intro-grid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, .9fr); gap: clamp(40px, 6vw, 96px); align-items: center; }
+.portrait { position: relative; width: 100%; max-width: 440px; justify-self: end; }
+.portrait::before { content: ""; position: absolute; inset: 0; translate: 18px 18px; border: 1px solid rgba(212, 180, 122, .45); border-radius: 999px 999px 32px 32px; pointer-events: none; }
+.portrait-arch {
+  position: relative; aspect-ratio: 4 / 5; overflow: hidden; isolation: isolate;
+  border-radius: 999px 999px 32px 32px; border: 1px solid rgba(255, 255, 255, .1);
+  background: radial-gradient(70% 52% at 50% 36%, rgba(212, 180, 122, .42), transparent 70%), radial-gradient(60% 40% at 80% 90%, rgba(79, 91, 213, .35), transparent 70%), linear-gradient(180deg, #1B2645 0%, #0B1121 100%);
+  box-shadow: 0 50px 100px -40px rgba(0, 0, 0, .9), inset 0 1px 0 rgba(255, 255, 255, .08);
+}
+.portrait-arch::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 28%; background: linear-gradient(transparent, rgba(8, 12, 22, .9)); pointer-events: none; }
+.portrait-img { position: absolute; left: -9%; bottom: -5%; width: 112%; max-width: none; height: auto; will-change: translate; }
+.portrait-tag { position: absolute; left: -28px; bottom: 34px; z-index: 2; display: inline-flex; align-items: center; gap: 12px; padding: 12px 18px; border-radius: 18px; font-family: var(--serif); font-size: 1.25rem; line-height: 1.15; }
+.portrait-tag small { display: block; font-family: var(--sans); font-size: .78rem; color: var(--muted); margin-top: 2px; }
+@media (prefers-reduced-motion: no-preference) {
+  .js .portrait .portrait-arch { clip-path: inset(100% 0 0 0 round 220px 220px 32px 32px); transition: clip-path 1.7s var(--ease-in-out) .1s; }
+  .js .portrait.is-in .portrait-arch { clip-path: inset(0 0 0 0 round 0); }
+  .js .portrait .portrait-img { scale: 1.12; transition: scale 2.2s var(--ease) .2s; }
+  .js .portrait.is-in .portrait-img { scale: 1; }
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 1023px) {
-  .hero-grid, .head, .private, .card, .contact-grid { grid-template-columns: minmax(0, 1fr); }
+  .hero-grid, .head, .private, .card, .contact-grid, .intro-grid { grid-template-columns: minmax(0, 1fr); }
+  .portrait { justify-self: start; max-width: 380px; }
   .hero-grid { align-items: start; }
   .hero-visual { max-width: 640px; width: 100%; }
   .card-media { order: -1; }
@@ -517,6 +540,8 @@ main, .footer { position: relative; z-index: 1; }
   .frame-url { display: none; }
   .hero-actions .btn { flex: 1 1 auto; }
   .chip-a { left: 2%; top: 4%; }
+  .portrait { max-width: 300px; margin-left: 10px; }
+  .portrait-tag { left: -10px; bottom: 20px; font-size: 1.1rem; }
   .chip-b { right: 4%; bottom: -8%; }
   .band { height: 540px; }
 }
@@ -638,7 +663,15 @@ main, .footer { position: relative; z-index: 1; }
 
   <section class="section" id="intro" aria-label="Introduction">
     <div class="wrap">
-      <p class="statement" data-scrub>For nearly five years I've built software that moves money, keeps compliance teams in control and sells property: AML monitoring, enterprise ERP, and launch platforms for projects by <em>Emaar, Modon and Azizi.</em></p>
+      <div class="intro-grid">
+        <p class="statement" data-scrub>For nearly five years I've built software that moves money, keeps compliance teams in control and sells property: AML monitoring, enterprise ERP, and launch platforms for projects by <em>Emaar, Modon and Azizi.</em></p>
+        <figure class="portrait" data-reveal>
+          <div class="portrait-arch">
+            <img class="portrait-img" data-depth="-34" src="kaynat-portrait-1000.webp" srcset="kaynat-portrait-560.webp 560w, kaynat-portrait-1000.webp 1000w" sizes="(max-width: 1023px) 80vw, 490px" width="1000" height="1251" loading="lazy" alt="Kaynat Saeed, full-stack developer in Dubai">
+          </div>
+          <figcaption class="portrait-tag glass"><span class="pulse" aria-hidden="true"></span><span>Kaynat Saeed<small>Full-stack developer, Dubai</small></span></figcaption>
+        </figure>
+      </div>
       <dl class="stats">
         <div data-reveal><dt>Nearly five years of full-stack experience</dt><dd><span data-count="5">5</span><sup>yrs</sup></dd></div>
         <div data-reveal style="--d:.1s"><dt>Docker apps I run in production on Microsoft Azure</dt><dd><span data-count="6">6</span></dd></div>
@@ -1274,7 +1307,7 @@ main, .footer { position: relative; z-index: 1; }
   var band = $('.band'), tband = $('.tband');
   var bandRows = $$('.band-row').map(function (el) { return { el: el, dir: +el.dataset.dir, base: 0 }; });
   var tRows = $$('.tband-row').map(function (el) { return { el: el, dir: +el.dataset.dir, base: 0 }; });
-  var pImgs = $$('[data-parallax]');
+  var pImgs = $$('[data-parallax]'), depthEls = $$('[data-depth]');
   function measureRows(rows, host) {
     if (!host) return;
     var hw = host.getBoundingClientRect().width;
@@ -1329,6 +1362,11 @@ main, .footer { position: relative; z-index: 1; }
       var ir = pImgs[q].getBoundingClientRect();
       if (ir.bottom < -120 || ir.top > vh + 120) continue;
       pImgs[q].style.translate = '0 ' + ((((ir.top + ir.height / 2) - vh / 2) / vh) * -26).toFixed(1) + 'px';
+    }
+    for (var z = 0; z < depthEls.length; z++) {
+      var zr = depthEls[z].parentNode.getBoundingClientRect();
+      if (zr.bottom < -120 || zr.top > vh + 120) continue;
+      depthEls[z].style.translate = '0 ' + ((((zr.top + zr.height / 2) - vh / 2) / vh) * +depthEls[z].dataset.depth).toFixed(1) + 'px';
     }
     if (timeline && tlFill) {
       var tr = timeline.getBoundingClientRect();
