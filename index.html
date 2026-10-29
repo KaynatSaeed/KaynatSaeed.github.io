@@ -489,7 +489,7 @@ main, .footer { position: relative; z-index: 1; }
 }
 .portrait-arch::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 28%; background: linear-gradient(transparent, rgba(8, 12, 22, .9)); pointer-events: none; }
 .portrait-img { position: absolute; left: -9%; bottom: -5%; width: 112%; max-width: none; height: auto; will-change: translate; }
-.portrait-tag { position: absolute; left: -28px; bottom: 34px; z-index: 2; display: inline-flex; align-items: center; gap: 12px; padding: 12px 18px; border-radius: 18px; font-family: var(--serif); font-size: 1.25rem; line-height: 1.15; }
+.portrait-tag { position: absolute; left: -28px; top: 40%; z-index: 2; display: inline-flex; align-items: center; gap: 12px; padding: 12px 18px; border-radius: 18px; font-family: var(--serif); font-size: 1.25rem; line-height: 1.15; }
 .portrait-tag small { display: block; font-family: var(--sans); font-size: .78rem; color: var(--muted); margin-top: 2px; }
 @media (prefers-reduced-motion: no-preference) {
   .js .portrait .portrait-arch { clip-path: inset(100% 0 0 0 round 220px 220px 32px 32px); transition: clip-path 1.7s var(--ease-in-out) .1s; }
@@ -541,7 +541,7 @@ main, .footer { position: relative; z-index: 1; }
   .hero-actions .btn { flex: 1 1 auto; }
   .chip-a { left: 2%; top: 4%; }
   .portrait { max-width: 300px; margin-left: 10px; }
-  .portrait-tag { left: -10px; bottom: 20px; font-size: 1.1rem; }
+  .portrait-tag { left: -10px; top: 38%; font-size: 1.1rem; }
   .chip-b { right: 4%; bottom: -8%; }
   .band { height: 540px; }
 }
